@@ -6,7 +6,20 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.searchInput{
+    border-color: rgb(182, 182, 182);
+    border-width: 0.5px;
+    border-radius: 10px;
+    width: 60%;
+    height: 50px;
+}
+.searchBtn{
+  border-color: rgb(182, 182, 182);
+  border-width: 0.5px;
+  border-radius: 10px;
+  height: 56px;
+  width: 11%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,14 +27,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
