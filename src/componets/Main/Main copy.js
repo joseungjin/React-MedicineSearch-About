@@ -13,11 +13,7 @@ import axios from "axios";
     }).then(function (response) {
       const dataSet = response.data;
       //InData([dataSet]);
-
-      if(dataSet.body.items[0].ITEM_NAME.length > 0){
-        console.log(dataSet.body.items[0].ITEM_NAME);
-      }
- 
+      console.log(dataSet.body.items[0].ITEM_NAME);
     });
   } 
 
@@ -25,15 +21,20 @@ class Main extends React.Component{
     
     render(){
         return(
-            
-
-      <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'100%', height:'100vh'}}>
-            <form style={{display:'flex', flexDirection:'column'}} >
-              <label style={{display:'flex', justifyContent:'center'}}>로고</label>
-              <input style={{width:'300px',height:'50px'}} type="text" onChange={getAPI}/>
-            </form> 
-      </div>
-         
+            <div className="App">
+            <header className="App-header">
+              <p>
+                임시 이름
+              </p>
+             <div style={{width:'100%'}}>
+                <input type ='text' name = 'name' className='searchInput' placeholder="약 품명을 입력해주세요" onChange={getAPI}></input>
+                <button className='searchBtn' onClick={onChange}>검색</button>
+            </div> 
+            </header>
+            <div>
+              
+            </div>
+          </div>
         
         );
     }
