@@ -1,7 +1,7 @@
 
 import React,{useEffect, useState} from 'react'
 import {API_URL} from "../config"
-import { SearchBar } from '../SearchBar/SearchBar'
+import SearchBar  from '../SearchBar/SearchBar'
 
 function Main() {
     const [Medicine, setMedicine] = useState(null)
@@ -29,7 +29,7 @@ function Main() {
     return (
         
       <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'100%', height:'100vh'}}>
-        <SearchBar updateField={updateField}/>
+        <SearchBar style={{display:'flex'}} updateField={updateField}/>
       </div>
    
         
