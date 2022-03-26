@@ -4,12 +4,11 @@ function SearchBar({results, updateField, keyword}) {
 
   return (
       <div >
-          <input style={{width:'100%', height:'100%'}} 
+          <input 
           placeholder="Search"
           onChange={e => updateField("keyword", e.target.value)}
           />
       </div>
-      
 
  
   )
