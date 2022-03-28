@@ -4,21 +4,26 @@ import {API_URL} from "../config"
 import SearchBar from '../SearchBar/SearchBar'
 
 function Main() {
-    const [Medicine, setMedicine] = useState(null)
-    const [Keyword, setKeyword] = useState(null)
+    const [Medicine, setMedicine] = useState([])
+    const [Keyword, setKeyword] = useState([])
     // const name = e.target.value;
       // 필드를 업데이트 
     
     const updateField = (field, value, update = true) => {
       if (field === 'keyword') {
         setKeyword(value);
+        console.log(value)
         const endpoint =`${API_URL}${Keyword}&type=json`;
         
         fetch(endpoint)
         .then(response => response.json())
         .then(response => {
-          console.log(response.body)
-          //if(response.body.items)console.log(response.body.items[0].ITEM_NAME)
+          //console.log(response.body)
+          if(response.body.items){
+          console.log(response.body.items[0].ITEM_NAME)
+           setMedicine(response.body.items[0].ITEM_NAME)
+           //if(response.body.items)console.log(response.body.items[0].ITEM_NAME)
+          }
         })
       }
     }
@@ -30,7 +35,7 @@ function Main() {
       
       <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'100%', height:'100vh'}}>
 
-        <SearchBar updateField={updateField}/>
+        <SearchBar Medicine={Medicine} updateField={updateField}/>
       </div>
    
         
