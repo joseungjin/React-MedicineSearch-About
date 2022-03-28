@@ -20,8 +20,14 @@ function Main() {
         .then(response => {
           //console.log(response.body)
           if(response.body.items){
-          console.log(response.body.items[0].ITEM_NAME)
-           setMedicine(response.body.items[0].ITEM_NAME)
+           console.log(response.body.items[0])
+          // const resultName = response.body.items.map((name,index)=>{ 
+          //   name={name}
+          //   key ={index}
+          // })
+         //response.body.items.map((name, index) => (setMedicine(name.ITEM_NAME)));
+         setMedicine(response.body.items)
+          //setMedicine(response.body.items[i])
            //if(response.body.items)console.log(response.body.items[0].ITEM_NAME)
           }
         })
