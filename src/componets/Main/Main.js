@@ -20,7 +20,7 @@ function Main() {
         .then(response => {
           //console.log(response.body)
           if(response.body.items){
-           console.log(response.body.items[0])
+           console.log(response.body.items)
           // const resultName = response.body.items.map((name,index)=>{ 
           //   name={name}
           //   key ={index}
@@ -41,7 +41,8 @@ function Main() {
       
       <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'100%', height:'100vh'}}>
 
-        <SearchBar Medicine={Medicine} updateField={updateField}/>
+        <SearchBar Medicine={Medicine} Keyword={Keyword} updateField={updateField}/>
+
       </div>
    
         
