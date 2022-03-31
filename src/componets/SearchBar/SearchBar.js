@@ -52,15 +52,16 @@ const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
     >
       <div className="first">
        
-     
-        {ITEM_NAME.includes(Keyword) ? 
+      <div>
+        {ITEM_NAME.includes(Keyword) ? (
           <>
             {ITEM_NAME.split(Keyword)[0]} 
             <span style={{ color: "#3F51B5" }}>{Keyword}</span>
            {ITEM_NAME.split(Keyword)[1]}
           </>
-        : ITEM_NAME
+        ): (ITEM_NAME)
         }
+        </div>
         <p className="sub-header">{ENTP_NAME}</p>
       </div>
       {console.log(ITEM_NAME.includes(Keyword))}
