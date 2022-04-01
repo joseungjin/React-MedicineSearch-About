@@ -80,7 +80,8 @@ SearchPreview Component
   justify-content: space-between;
   padding: 5px 3px;
   padding-right: 10px;
-  border-top: 1px solid;
+  /* border-top: 1px solid; */
+  border-top: 0.7px solid rgb(121, 121, 121);
   align-items: baseline;
 }
 
@@ -88,6 +89,7 @@ SearchPreview Component
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  /* border: none; */
 }
 
 .second {

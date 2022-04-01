@@ -62,9 +62,8 @@ const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
         ): (ITEM_NAME)
         }
         </div>
-        <p className="sub-header">{ENTP_NAME}</p>
+        <p style={{border:'none'}} className="sub-header">{ENTP_NAME}</p>
       </div>
-      {console.log(ITEM_NAME.includes(Keyword))}
       {/* <div className="second">
         <p className="age">{age}</p>
         <p className="sub-header">age</p>
