@@ -29,6 +29,7 @@ var renderResults = Medicine.map((name,index) => {
           placeholder="Search"
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
+          onKeyPress={e=> console.log(e.key)}
         />
      
  
