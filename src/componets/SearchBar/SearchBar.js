@@ -1,8 +1,11 @@
 import React, { Component,useState } from "react";
 import '../../componets/css/SearchBar.css'
+import { PreView } from "../PreView/PreView";
 
 function SearchBar({Medicine, updateField,Keyword}) {
-
+const onEnter =(e)=>{
+  
+}
 //stateless component to render preview results
 var renderResults = Medicine.map((name,index) => {
   return (
@@ -29,7 +32,7 @@ var renderResults = Medicine.map((name,index) => {
           placeholder="Search"
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
-          onKeyPress={e=> console.log(e.key)}
+          onKeyPress={e=> onEnter(e.key)}
         />
      
  
