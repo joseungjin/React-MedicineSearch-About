@@ -22,7 +22,7 @@ var renderResults = Medicine.map((name,index) => {
   return (
     
       <div className="auto">
-        <div>LOGO</div>
+        <div>About</div>
        <button
         className={`cancel-btn active`}
       >
