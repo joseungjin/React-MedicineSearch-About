@@ -22,7 +22,7 @@ var renderResults = Medicine.map((name,index) => {
   return (
     
       <div className="auto">
-        <span style={{fontSize:"40px", width:"blod"}}>About</span>
+        <span style={{fontSize:"40px", width:"bold"}}>About</span>
        <button
         className={`cancel-btn active`}
       >
