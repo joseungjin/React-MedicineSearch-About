@@ -37,7 +37,7 @@ var renderResults = Medicine.map((name,index) => {
         />
      
  
-        {Medicine.length > 0 ? (
+        {Keyword.length > 0 ? (
         <div className="search-results">{renderResults}</div>
       ) : null}
 
