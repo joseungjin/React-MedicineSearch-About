@@ -3,9 +3,7 @@ import '../../componets/css/SearchBar.css'
 import { PreView } from "../PreView/PreView";
 
 function SearchBar({Medicine, updateField,Keyword}) {
-const onEnter =(e)=>{
-  
-}
+
 //stateless component to render preview results
 var renderResults = Medicine.map((name,index) => {
   return (
@@ -15,7 +13,6 @@ var renderResults = Medicine.map((name,index) => {
       ITEM_NAME={name.itemName}
       ENTP_NAME={name.entpName}
       Keyword={Keyword}
-      
     />
   );
 });
