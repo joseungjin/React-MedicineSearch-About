@@ -45,13 +45,14 @@ var renderResults = Medicine.map((name,index) => {
   )
   
 }
+
 //stateless component to render preview results
 const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
-  console.log(Keyword)
+  
   return (
     <div
       className={`search-preview ${index == 0 ? "start" : ""}`}
-    >
+     onClick={()=>console.log(ITEM_NAME)}>
       <div className="first">
        
       <div>
