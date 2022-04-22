@@ -61,7 +61,8 @@ search results container div
   display: flex;
   flex-direction: column;
   background-color: white;
-  border: none;
+  border: rgb(121, 121, 121) solid 1px;
+  border-top: none;
   width: 400px;
   max-height: 400px;
   padding: 10px;

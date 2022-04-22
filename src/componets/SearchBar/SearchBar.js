@@ -61,11 +61,11 @@ const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
             {ITEM_NAME.split(Keyword)[0]} 
             <span style={{ color: "#3F51B5" }}>{Keyword}</span>
            {ITEM_NAME.split(Keyword)[1]}
-         
+           
           </>
         ): (ITEM_NAME)
         }
-        <img height={"15px"} src="shortcut.png"></img>
+       <img height={"15px"} src="shortcut.png"></img>
         </div>
         
         <p style={{border:'none'}} className="sub-header">{ENTP_NAME}</p>
