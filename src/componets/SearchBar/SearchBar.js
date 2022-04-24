@@ -1,3 +1,4 @@
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 import React, { Component,useState } from "react";
 import '../../componets/css/SearchBar.css'
 import { PreView } from "../PreView/PreView";
@@ -20,11 +21,14 @@ var renderResults = Medicine.map((name,index) => {
     
       <div className="auto">
         <span style={{fontSize:"40px", fontWeight:"bold"}}>About</span>
-       <button
+        {Keyword.length>0?<button
         className={`cancel-btn active`}
       >
         x
       </button>
+      :""
+      }
+       
           <input
           className="search-bar"
           placeholder="Search"
