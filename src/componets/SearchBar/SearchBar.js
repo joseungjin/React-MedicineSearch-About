@@ -1,4 +1,5 @@
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { Component,useState } from "react";
 import '../../componets/css/SearchBar.css'
 import { PreView } from "../PreView/PreView";
@@ -6,7 +7,7 @@ import { PreView } from "../PreView/PreView";
 function SearchBar({Medicine, updateField,Keyword}) {
 
 //stateless component to render preview results
-var renderResults = Medicine.map((name,index) => {
+const renderResults = Medicine.map((name,index) => {
   return (
     <SearchPreview
       key={index}
@@ -17,15 +18,18 @@ var renderResults = Medicine.map((name,index) => {
     />
   );
 });
+const KeywordClear =() =>{
+  updateField("keyword", "")
+  
+}
   return (
     
       <div className="auto">
         <span style={{fontSize:"40px", fontWeight:"bold"}}>About</span>
-        {Keyword.length>0?<button
-        className={`cancel-btn active`}
-      >
-        x
-      </button>
+        {Keyword.length>0? 
+        <button className={`cancel-btn active`} onClick={KeywordClear}>
+          x
+        </button>
       :""
       }
        
@@ -34,10 +38,10 @@ var renderResults = Medicine.map((name,index) => {
           placeholder="Search"
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
-          onKeyPress={e=> onEnter(e.key)}
+          // onKeyPress={e=> onEnter(e.key)}
         />
      
- 
+        
         {Keyword.length > 0 ? (
         <div className="search-results">{renderResults}</div>
       ) : null}
