@@ -22,14 +22,23 @@ const KeywordClear =() =>{
   updateField("keyword", "")
   
 }
+const onEnter =(e) =>{
+  console.log("2222"+e.key)
+    if(e.key =='Enter'){
+      this.props.history.push('/preview');
+    }
+}
   return (
     
       <div className="auto">
         <span style={{fontSize:"40px", fontWeight:"bold"}}>About</span>
         {Keyword.length>0? 
-        <button className={`cancel-btn active`} onClick={KeywordClear}>
-          x
-        </button>
+        <>
+          <button className={`cancel-btn active`} onClick={KeywordClear}>
+            x
+          </button>
+        
+        </>
       :""
       }
        
@@ -37,10 +46,13 @@ const KeywordClear =() =>{
           className="search-bar"
           placeholder="Search"
           value={Keyword}
+
           onChange={e => updateField("keyword", e.target.value)}
-          // onKeyPress={e=> onEnter(e.key)}
+          // onKeyPress={e => {if(e.key=='Enter'){ <PreView Medicine={Medicine} Keyword={Keyword} updateField={updateField}/>}
+          // }}
+          
         />
-     
+        
         
         {Keyword.length > 0 ? (
         <div className="search-results">{renderResults}</div>
