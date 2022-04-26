@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# About (의약품 검색 시스템)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
