@@ -37,7 +37,7 @@ SearchBar container
   border: none;
   outline: none;
   font-weight: 500;
-
+  border-radius: 1rem;
   z-index: 1;
   transform: translate(185px, 32px) scale(1.15);
 }
