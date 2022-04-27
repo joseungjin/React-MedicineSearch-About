@@ -32,36 +32,17 @@ const onEnter =(e) =>{
     
       <div className="auto">
         <span style={{fontSize:"40px", fontWeight:"bold"}}>About</span>
-        {Keyword.length>0? 
-        <>
-          <button className={`cancel-btn active`} onClick={KeywordClear}>
-            x
-          </button>
-        
-        </>
-      :""
-      }
-       
+        {Keyword.length >0 ? <button className={`cancel-btn active`} onClick={KeywordClear}>x</button>:""}
           <input
           className="search-bar"
           placeholder="Search"
           value={Keyword}
-
           onChange={e => updateField("keyword", e.target.value)}
           // onKeyPress={e => {if(e.key=='Enter'){ <PreView Medicine={Medicine} Keyword={Keyword} updateField={updateField}/>}
           // }}
-          
         />
-        
-        
-        {Keyword.length > 0 ? (
-        <div className="search-results">{renderResults}</div>
-      ) : null}
-
-
+        {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
       </div>
-
- 
   )
   
 }
