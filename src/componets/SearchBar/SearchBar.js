@@ -38,8 +38,7 @@ const onEnter =(e) =>{
           placeholder="Search"
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
-          // onKeyPress={e => {if(e.key=='Enter'){ <PreView Medicine={Medicine} Keyword={Keyword} updateField={updateField}/>}
-          // }}
+           onKeyPress={e => {if(e.key=='Enter'){ } }}
         />
         {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
       </div>
