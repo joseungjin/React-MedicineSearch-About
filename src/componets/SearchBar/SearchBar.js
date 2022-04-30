@@ -51,8 +51,7 @@ const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
   
   return (
     <div
-      className={`search-preview ${index == 0 ? "start" : ""}`}
-     onClick={()=>console.log(ITEM_NAME)}>
+      className={`search-preview ${index == 0 ? "start" : ""}`} >
       <div className="first">
       
       <div>
@@ -70,10 +69,6 @@ const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
         
         <p style={{border:'none'}} className="sub-header">{ENTP_NAME}</p>
       </div>
-      {/* <div className="second">
-        <p className="age">{age}</p>
-        <p className="sub-header">age</p>
-      </div> */}
     </div>
   );
 };
