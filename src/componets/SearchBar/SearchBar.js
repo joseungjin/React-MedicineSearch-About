@@ -1,5 +1,5 @@
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import React, { Component,useState } from "react";
 import '../../componets/css/SearchBar.css'
 import { PreView } from "../PreView/PreView";
@@ -25,7 +25,7 @@ const KeywordClear =() =>{
 const onEnter =(e) =>{
   console.log("2222"+e.key)
     if(e.key =='Enter'){
-      this.props.history.push('/preview');
+     //페이지 이동
     }
 }
   return (
@@ -38,7 +38,7 @@ const onEnter =(e) =>{
           placeholder="Search"
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
-           onKeyPress={e => {if(e.key=='Enter'){ } }}
+          onKeyPress={e=>onEnter(e)}
         />
         {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
       </div>
