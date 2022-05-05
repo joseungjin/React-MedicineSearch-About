@@ -1,17 +1,13 @@
 import React from 'react'
 import SearchBar from '../SearchBar/SearchBar'
-
+import { useLocation } from "react-router";
 export const PreView = () => {
+  
+  const { state } = useLocation();
+  console.log(state);
   return (
     <div>
-       <div className="auto">
-          <input
-          className="search-bar"
-          placeholder="Search"
-          onChange={e => updateField("keyword", e.target.value)}
-          onKeyPress={e=>onEnter(e)}
-        />
-      </div>
+      <SearchBar></SearchBar>
     </div>
     
   )

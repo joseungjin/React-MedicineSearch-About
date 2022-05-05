@@ -1,5 +1,5 @@
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link ,useNavigate} from 'react-router-dom';
 import React, { Component,useState } from "react";
 import '../../componets/css/SearchBar.css'
 import { PreView } from "../PreView/PreView";
@@ -22,9 +22,12 @@ const KeywordClear =() =>{
   updateField("keyword", "")
   
 }
+const navigate = useNavigate();
+
 const onEnter =(e) =>{
   console.log("2222"+e.key)
     if(e.key =='Enter'){
+      navigate("/preview");
      //페이지 이동
     }
 }
@@ -52,7 +55,7 @@ const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
   return (
     <div
       className={`search-preview ${index == 0 ? "start" : ""}`} >
-      <div className="first">
+      <div className="first" >
       
       <div>
         {ITEM_NAME.includes(Keyword) ? (
