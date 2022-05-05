@@ -7,7 +7,7 @@ export const PreView = () => {
   console.log(state);
   return (
     <div>
-      <SearchBar></SearchBar>
+      미리보기 페이지
     </div>
     
   )
