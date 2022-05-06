@@ -8,26 +8,26 @@ function Main() {
     // const name = e.target.value;
       // 필드를 업데이트 
     
-    const updateField = (field, value, update = true) => {
-      if (field === 'keyword') {
-        setKeyword(value);
-        console.log(value)
-        const endpoint =`${API_URL}${Keyword}&type=json`;
+    // const updateField = (field, value, update = true) => {
+    //   if (field === 'keyword') {
+    //     setKeyword(value);
+    //     console.log(value)
+    //     const endpoint =`${API_URL}${Keyword}&type=json`;
         
-        fetch(endpoint)
-        .then(response => response.json())
-        .then(response => {
-          //console.log(response.body)
-          if(response.body.items){
-            setMedicine(response.body.items)
-         }
-        })
-      }
-    }
+    //     fetch(endpoint)
+    //     .then(response => response.json())
+    //     .then(response => {
+    //       //console.log(response.body)
+    //       if(response.body.items){
+    //         setMedicine(response.body.items)
+    //      }
+    //     })
+    //   }
+    // }
 
     return (
       <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'100%', height:'100vh'}}>
-        <SearchBar Medicine={Medicine} Keyword={Keyword} updateField={updateField}/>
+        <SearchBar />
       </div>
    
         

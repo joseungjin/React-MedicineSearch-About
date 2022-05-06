@@ -3,9 +3,28 @@ import { BrowserRouter, Routes, Route, Link ,useNavigate} from 'react-router-dom
 import React, { Component,useState } from "react";
 import '../../componets/css/SearchBar.css'
 import { PreView } from "../PreView/PreView";
+import {API_URL} from "../config"
 
-function SearchBar({Medicine, updateField,Keyword}) {
+function SearchBar() {
+  const [Medicine, setMedicine] = useState([])
+  const [Keyword, setKeyword] = useState([])
 
+  const updateField = (field, value, update = true) => {
+    if (field === 'keyword') {
+      setKeyword(value);
+      console.log(value)
+      const endpoint =`${API_URL}${Keyword}&type=json`;
+      
+      fetch(endpoint)
+      .then(response => response.json())
+      .then(response => {
+        //console.log(response.body)
+        if(response.body.items){
+          setMedicine(response.body.items)
+       }
+      })
+    }
+  }
 //stateless component to render preview results
 const renderResults = Medicine.map((name,index) => {
   return (
