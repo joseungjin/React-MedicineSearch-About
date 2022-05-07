@@ -53,7 +53,7 @@ const onEnter =(e) =>{
   return (
     
       <div className="auto">
-        <span style={{fontSize:"40px", fontWeight:"bold"}}>About</span>
+        
         {Keyword.length >0 ? <button className={`cancel-btn active`} onClick={KeywordClear}>x</button>:""}
           <input
           className="search-bar"
