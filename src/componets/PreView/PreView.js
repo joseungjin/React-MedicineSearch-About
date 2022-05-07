@@ -6,9 +6,7 @@ export const PreView = () => {
   const { state } = useLocation();
   console.log(state);
   return (
-    <div>
-      미리보기 페이지
-    </div>
+   <SearchBar></SearchBar>
     
   )
 }
