@@ -44,9 +44,8 @@ const KeywordClear =() =>{
 const navigate = useNavigate();
 
 const onEnter =(e) =>{
-  console.log("2222"+e.key)
     if(e.key =='Enter'){
-      navigate("/preview",{state:e.target.value});
+      navigate("/preview");
      //페이지 이동
     }
 }

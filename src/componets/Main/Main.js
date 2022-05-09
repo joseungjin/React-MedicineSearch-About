@@ -27,7 +27,9 @@ function Main() {
 
     return (
       // <div style={{display:'flex', justifyContent:'center', alignItems:'center',width:'100%', height:'100vh'}}>
-        <div style={{fontSize:"40px", fontWeight:"bold"}}>About
+       
+        <div>
+           <div style={{fontSize:"40px", fontWeight:"bold"}}>About</div>
         <SearchBar />
       </div>
    
