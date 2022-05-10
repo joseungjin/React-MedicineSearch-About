@@ -45,10 +45,11 @@ const navigate = useNavigate();
 
 const onEnter =(e) =>{
     if(e.key =='Enter'){
-      navigate("/preview");
+      navigate("/preview",{state:e.target.value});
      //페이지 이동
     }
 }
+
   return (
     
       <div className="auto">
@@ -60,6 +61,7 @@ const onEnter =(e) =>{
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
           onKeyPress={e=>onEnter(e)}
+          
         />
         {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
       </div>
@@ -69,13 +71,15 @@ const onEnter =(e) =>{
 
 //stateless component to render preview results
 const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
-  
+  const clickToEdit =(e)=>{
+    console.log(e);
+  }
   return (
     <div
       className={`search-preview ${index == 0 ? "start" : ""}`} >
-      <div className="first" >
+      <div className="first">
       
-      <div>
+      <div onClick={e=> clickToEdit(e.target.value)}>
         {ITEM_NAME.includes(Keyword) ? (
           <>
             {ITEM_NAME.split(Keyword)[0]} 
