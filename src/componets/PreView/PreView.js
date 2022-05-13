@@ -6,7 +6,7 @@ export const PreView = () => {
   const { state } = useLocation();
   console.log(state);
   return (
-   <SearchBar></SearchBar>
+   <SearchBar setKeyword={state}></SearchBar>
     
   )
 }
