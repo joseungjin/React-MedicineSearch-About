@@ -5,9 +5,6 @@ import SearchBar from '../SearchBar/SearchBar'
 function Main() {
     // const [Medicine, setMedicine] = useState([])
     // const [Keyword, setKeyword] = useState([])
-    // const name = e.target.value;
-      // 필드를 업데이트 
-    
     // const updateField = (field, value, update = true) => {
     //   if (field === 'keyword') {
     //     setKeyword(value);
