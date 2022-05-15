@@ -8,7 +8,7 @@ import {API_URL} from "../config"
 function SearchBar() {
   const [Medicine, setMedicine] = useState([])
   const [Keyword, setKeyword] = useState([])
-
+  
   const updateField = (field, value, update = true) => {
     if (field === 'keyword') {
       setKeyword(value);
@@ -25,6 +25,11 @@ function SearchBar() {
       })
     }
   }
+  var updateText = (text) => {
+    updateField("keyword", text, false);
+    updateField("results", []);
+  };
+
 //stateless component to render preview results
 const renderResults = Medicine.map((name,index) => {
   return (
@@ -34,13 +39,15 @@ const renderResults = Medicine.map((name,index) => {
       ITEM_NAME={name.itemName}
       ENTP_NAME={name.entpName}
       Keyword={Keyword}
+      updateText={updateText}
     />
   );
 });
+
 const KeywordClear =() =>{
-  updateField("keyword", "")
-  
+  updateField("keyword", "")  
 }
+
 const navigate = useNavigate();
 
 const onEnter =(e) =>{
@@ -69,17 +76,16 @@ const onEnter =(e) =>{
   
 }
 
+
 //stateless component to render preview results
-const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword}) => {
-  const clickToEdit =(e)=>{
-    console.log(e);
-  }
+const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword,updateText}) => {
+
   return (
     <div
       className={`search-preview ${index == 0 ? "start" : ""}`} >
-      <div className="first">
+      <div className="first" >
       
-      <div onClick={e=> clickToEdit(e.target.value)}>
+      <div onClick={e=> updateText(ITEM_NAME)}>
         {ITEM_NAME.includes(Keyword) ? (
           <>
             {ITEM_NAME.split(Keyword)[0]} 
