@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import {API_URL} from "../config"
 import SearchBar from '../SearchBar/SearchBar'
-
+import '../../componets/css/Main.css'
 function Main() {
     // const [Medicine, setMedicine] = useState([])
     // const [Keyword, setKeyword] = useState([])
@@ -22,9 +22,9 @@ function Main() {
     //   }
     // }
     return (
-        <div>
+        <div className='MainSearch'>
            <SearchBar></SearchBar>
-      </div>
+        </div>
    
         
     )
