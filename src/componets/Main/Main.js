@@ -22,9 +22,18 @@ function Main() {
     //   }
     // }
     return (
-        <div className='MainSearch'>
-           <SearchBar></SearchBar>
+        <div>
+            <div className='MainSearch'>
+                <SearchBar></SearchBar>
+           </div>
+           <div>
+                가까운 약국 찾기 
+           </div>
+           <div>
+               즐겨찾기
+           </div>
         </div>
+        
    
         
     )
