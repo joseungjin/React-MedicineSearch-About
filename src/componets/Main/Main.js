@@ -20,11 +20,11 @@ function Main() {
     //      }
     //     })
     //   }
-    // }
+    // }<SearchBar></SearchBar>
     return (
         <div>
             <div className='MainSearch'>
-                <SearchBar></SearchBar>
+                <input className='MainInput'></input>
            </div>
            <div>
                 가까운 약국 찾기 
