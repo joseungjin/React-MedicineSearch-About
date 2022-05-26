@@ -26,10 +26,10 @@ function Main() {
             <div className='MainSearch'>
                 <input className='MainInput'></input>
            </div>
-           <div>
+           <div className=''>
                 가까운 약국 찾기 
            </div>
-           <div>
+           <div className=''>
                즐겨찾기
            </div>
         </div>
