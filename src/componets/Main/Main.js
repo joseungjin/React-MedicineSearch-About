@@ -26,11 +26,19 @@ function Main() {
             <div className='MainSearch'>
                 <input className='MainInput'></input>
            </div>
-           <div className=''>
-                가까운 약국 찾기 
-           </div>
-           <div className=''>
-               즐겨찾기
+           <div width='100%'>
+                <div className='MainMapDiv'>
+                    <div style={{'margin-top':'100px'}}>
+                        <img src='../magnifying-glass.png'></img>
+                    </div>
+                    <div>가까운 약국 찾기</div>
+                </div>
+                <div className='MainBookMarkDiv'>
+                    <div style={{'margin-top':'100px'}}>
+                        <img src='../bookmark.png' width='60px'></img>
+                    </div>
+                    <div>즐겨찾기</div>
+                </div>
            </div>
         </div>
         
