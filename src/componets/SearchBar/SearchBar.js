@@ -79,13 +79,17 @@ const onEnter =(e) =>{
 
 //stateless component to render preview results
 const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword,updateText}) => {
+  const navigate = useNavigate();
+  const DetailViewMove=()=>{
+      navigate("/detailview",{state:ITEM_NAME});
+  }
 
   return (
     <div
       className={`search-preview ${index == 0 ? "start" : ""}`} >
       <div className="first" >
       
-      <div onClick={e=> updateText(ITEM_NAME)}>
+      <div onClick={e=> DetailViewMove(ITEM_NAME)}>
         {ITEM_NAME.includes(Keyword) ? (
           <>
             {ITEM_NAME.split(Keyword)[0]} 
