@@ -16,11 +16,15 @@ Input styles
 .search-bar:focus {
   outline: none;
 }
-
+.previous-btn{
+  display: inline-block;
+}
 /*
 SearchBar container
 */
-
+.searchBar{
+  display: inline-block;
+}
 .auto {
   display: flex;
   flex-direction: column;
@@ -39,7 +43,7 @@ SearchBar container
   font-weight: 500;
   border-radius: 1rem;
   z-index: 1;
-  transform: translate(80px, 35px) scale(1.15);
+  transform: translate(210px, 0px) scale(1.15);
 }
 
 .search {

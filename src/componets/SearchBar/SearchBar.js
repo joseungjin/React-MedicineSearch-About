@@ -58,9 +58,9 @@ const onEnter =(e) =>{
 }
 
   return (
-    
-      <div className="auto">
-        
+    <div className="auto">
+      <div className="searchBar">
+        {Keyword.length >0 ? <button className={'previous-btn'}>←</button>:""}
         {Keyword.length >0 ? <button className={`cancel-btn active`} onClick={KeywordClear}>x</button>:""}
           <input
           className="search-bar"
@@ -72,6 +72,7 @@ const onEnter =(e) =>{
         />
         {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
       </div>
+    </div>
   )
   
 }
