@@ -2,6 +2,8 @@ import React,{useEffect, useState} from 'react'
 import {API_URL} from "../config"
 import SearchBar from '../SearchBar/SearchBar'
 import '../../componets/css/Main.css'
+import Top from "../Top/Top"
+
 function Main() {
     // const [Medicine, setMedicine] = useState([])
     // const [Keyword, setKeyword] = useState([])
