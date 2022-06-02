@@ -60,7 +60,7 @@ const onEnter =(e) =>{
   return (
     <div className="auto">
       <div className="searchBar">
-        {Keyword.length >0 ? <button className={'previous-btn'}>←</button>:""}
+        <button className={'previous-btn'}>←</button>
         {Keyword.length >0 ? <button className={`cancel-btn active`} onClick={KeywordClear}>x</button>:""}
           <input
           className="search-bar"
@@ -68,10 +68,9 @@ const onEnter =(e) =>{
           value={Keyword}
           onChange={e => updateField("keyword", e.target.value)}
           onKeyPress={e=>onEnter(e)}
-          
         />
-        {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
       </div>
+      {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
     </div>
   )
   
