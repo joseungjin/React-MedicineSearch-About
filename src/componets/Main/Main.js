@@ -30,13 +30,26 @@ function Main() {
            </div>
            <div width='100%'>
                 <div className='MainMapDiv'>
-                    <div style={{'margin-top':'100px'}}>
+                    <div style={{'margin-top':'50px'}}>
                         <img src='../magnifying-glass.png'></img>
                     </div>
-                    <div>가까운 약국 찾기</div>
+                    <div> 상세 검색</div>
                 </div>
                 <div className='MainBookMarkDiv'>
-                    <div style={{'margin-top':'100px'}}>
+                    <div style={{'margin-top':'50px'}}>
+                        <img src='../bookmark.png' width='60px'></img>
+                    </div>
+                    <div>즐겨찾기</div>
+                </div>
+                
+                <div className='MainMapDiv'>
+                    <div style={{'margin-top':'50px'}}>
+                        <img src='../magnifying-glass.png'></img>
+                    </div>
+                    <div>약국 찾기</div>
+                </div>
+                <div className='MainBookMarkDiv'>
+                    <div style={{'margin-top':'50px'}}>
                         <img src='../bookmark.png' width='60px'></img>
                     </div>
                     <div>즐겨찾기</div>
