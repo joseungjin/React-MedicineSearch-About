@@ -44,7 +44,6 @@ function Main() {
                 
                 <div className='MainMapDiv'>
                     <div style={{'margin-top':'50px'}}>
-                        <img src='../magnifying-glass.png'></img>
                     </div>
                     <div>약국 찾기</div>
                 </div>
@@ -52,7 +51,7 @@ function Main() {
                     <div style={{'margin-top':'50px'}}>
                         <img src='../bookmark.png' width='60px'></img>
                     </div>
-                    <div>즐겨찾기</div>
+                    <div>약 상세정보</div>
                 </div>
            </div>
         </div>
