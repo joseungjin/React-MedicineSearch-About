@@ -1,7 +1,7 @@
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
 import { BrowserRouter, Routes, Route, Link ,useNavigate} from 'react-router-dom';
 import React, { Component,useState } from "react";
-import '../../componets/css/SearchBar.css'
+import '../../componets/css/MainSearchBar.css'
 import { PreView } from "../PreView/PreView";
 import {API_URL} from "../config"
 
@@ -12,7 +12,7 @@ function SearchBar() {
   const updateField = (field, value, update = true) => {
     if (field === 'keyword') {
       setKeyword(value);
-      console.log(value);
+      console.log(value)
       const endpoint =`${API_URL}${Keyword}&type=json`;
       
       fetch(endpoint)
@@ -36,9 +36,7 @@ const renderResults = Medicine.map((name,index) => {
     <SearchPreview
       key={index}
       index={index}
-      ITEM_SEQ = {name.itemSeq}
       ITEM_NAME={name.itemName}
-      ITEM_IMAGE ={name.itemImage}
       ENTP_NAME={name.entpName}
       Keyword={Keyword}
       updateText={updateText}
@@ -58,19 +56,23 @@ const onEnter =(e) =>{
      //페이지 이동
     }
 }
-
+const search =()=>{
+  navigate("/search");
+}
   return (
     <div className="auto">
-      <div className="searchBar">
-        <button className={'previous-btn'}>←</button>
-        {Keyword.length >0 ? <button className={`cancel-btn active`} onClick={KeywordClear}>x</button>:""}
-          <input
-          className="search-bar"
-          placeholder="Search"
-          value={Keyword}
-          onChange={e => updateField("keyword", e.target.value)}
-          onKeyPress={e=>onEnter(e)}
-        />
+      <div>
+        <div className="Div-Main-Search">
+          <img className='findIcon-img' src="./findicon.png"></img>
+            {Keyword.length >0 ? <button className={`cancel-btn active`} onClick={KeywordClear}>x</button>:""}
+              <input
+              className="Main-search-bar"
+              value={Keyword}
+              onChange={e => updateField("keyword", e.target.value)}
+              onKeyPress={e=>onEnter(e)}
+              onClick={e=>search()}
+            />
+        </div>
       </div>
       {Keyword.length > 0 ? ( <div className="search-results">{renderResults}</div>) : null}
     </div>
@@ -80,10 +82,10 @@ const onEnter =(e) =>{
 
 
 //stateless component to render preview results
-const SearchPreview = ({ ITEM_SEQ,ITEM_NAME,ITEM_IMAGE,ENTP_NAME,index,Keyword,updateText}) => {
+const SearchPreview = ({ ITEM_NAME,ENTP_NAME,index,Keyword,updateText}) => {
   const navigate = useNavigate();
   const DetailViewMove=()=>{
-      navigate("/detailview",{state:ITEM_SEQ});
+      navigate("/detailview",{state:ITEM_NAME});
   }
 
   return (
@@ -91,7 +93,7 @@ const SearchPreview = ({ ITEM_SEQ,ITEM_NAME,ITEM_IMAGE,ENTP_NAME,index,Keyword,u
       className={`search-preview ${index == 0 ? "start" : ""}`} >
       <div className="first" >
       
-      <div onClick={e=> DetailViewMove(ITEM_SEQ)}>
+      <div onClick={e=> DetailViewMove(ITEM_NAME)}>
         {ITEM_NAME.includes(Keyword) ? (
           <>
             {ITEM_NAME.split(Keyword)[0]} 
@@ -101,7 +103,7 @@ const SearchPreview = ({ ITEM_SEQ,ITEM_NAME,ITEM_IMAGE,ENTP_NAME,index,Keyword,u
           </>
         ): (ITEM_NAME)
         }
-       {/* <img height={"15px"} src="shortcut.png"></img> */}
+       <img height={"15px"} src="shortcut.png"></img>
         </div>
         
         <p style={{border:'none'}} className="sub-header">{ENTP_NAME}</p>

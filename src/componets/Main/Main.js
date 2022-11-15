@@ -1,64 +1,44 @@
 import React,{useEffect, useState} from 'react'
+import { BrowserRouter, Routes, Route, Link ,useNavigate} from 'react-router-dom';
 import {API_URL} from "../config"
 import SearchBar from '../SearchBar/SearchBar'
+import MainSearchBar from '../SearchBar/MainSearchBar'
+import { PreView } from "../PreView/PreView";
 import '../../componets/css/Main.css'
 import Top from "../Top/Top"
 
 function Main() {
-    // const [Medicine, setMedicine] = useState([])
-    // const [Keyword, setKeyword] = useState([])
-    // const updateField = (field, value, update = true) => {
-    //   if (field === 'keyword') {
-    //     setKeyword(value);
-    //     console.log(value)
-    //     const endpoint =`${API_URL}${Keyword}&type=json`;
+    const isMobile = () => {
+        const user = navigator.userAgent;
+        let isCheck = false;
+    
+        if ( user.indexOf("iPhone") > -1 || user.indexOf("Android") > -1 ) {
+            isCheck = true;
+        }
         
-    //     fetch(endpoint)
-    //     .then(response => response.json())
-    //     .then(response => {
-    //       //console.log(response.body)
-    //       if(response.body.items){
-    //         setMedicine(response.body.items)
-    //      }
-    //     })
-    //   }
-    // }<SearchBar></SearchBar>
+        return isCheck;
+    }  
     return (
-        <div>
-            <div className='MainSearch'>
-                <input className='MainInput'></input>
-           </div>
-           <div width='100%'>
-                <div className='MainMapDiv'>
-                    <div style={{'margin-top':'50px'}}>
-                        <img src='../magnifying-glass.png'></img>
-                    </div>
-                    <div> 상세 검색</div>
-                </div>
-                <div className='MainBookMarkDiv'>
-                    <div style={{'margin-top':'50px'}}>
-                        <img src='../bookmark.png' width='60px'></img>
-                    </div>
-                    <div>즐겨찾기</div>
-                </div>
-                
-                <div className='MainMapDiv'>
-                    <div style={{'margin-top':'50px'}}>
-                    </div>
-                    <div>약국 찾기</div>
-                </div>
-                <div className='MainBookMarkDiv'>
-                    <div style={{'margin-top':'50px'}}>
-                        <img src='../bookmark.png' width='60px'></img>
-                    </div>
-                    <div>약 상세정보</div>
-                </div>
-           </div>
+        <div> 
+            <div className='MainLogoTop-div'>
+            </div>
+            
+            <div className='auto'>
+                {/* <img className='MainLogo' src='./MainLogo.svg'></img> */}
+                <span style={{fontSize:'50px'}}>About</span>
+            </div>
+
+            <div className='divSearch'>
+                <MainSearchBar></MainSearchBar>
+            </div>
+
+            <div className='MainLogoBottom-div'>
+
+            </div>
         </div>
-        
-   
         
     )
 }
+
 
 export default Main

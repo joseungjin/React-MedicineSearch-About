@@ -1,10 +1,21 @@
 import React from 'react'
 import { useLocation } from "react-router";
+import {API_URL_SEQ} from "../config"
 
-export const DetailView = () => {
-  const { state } = useLocation();
-  console.log(state);
+import React from 'react'
+
+function DetailView() {
+  
   return (
-    <div> {state}</div>
+    <div>DetailView</div>
   )
 }
+
+export default DetailView
+// export const DetailView = () => {
+//   const { state } = useLocation();
+//   console.log(state);
+//   return (
+//     <div> {state}</div>
+//   )
+// }
