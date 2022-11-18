@@ -14,7 +14,6 @@ import ListView from "./componets/ListView/ListView";
 class App extends Component {
   render(){
     return (
- 
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
