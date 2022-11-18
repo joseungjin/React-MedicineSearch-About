@@ -1,26 +1,18 @@
 import React,{useState,useEffect} from 'react'
 import { useLocation } from "react-router";
-<<<<<<< HEAD
+
 import {API_URL_SEQ} from "../config"
 
-import React from 'react'
 
-function DetailView() {
-  
-  return (
-    <div>DetailView</div>
-  )
-}
+// export default DetailView
+// // export const DetailView = () => {
+// //   const { state } = useLocation();
+// //   console.log(state);
+// //   return (
+// //     <div> {state}</div>
+// //   )
+// // }
 
-export default DetailView
-// export const DetailView = () => {
-//   const { state } = useLocation();
-//   console.log(state);
-//   return (
-//     <div> {state}</div>
-//   )
-// }
-=======
 import {API_URL} from "../config";
 
 function DetailView() {
@@ -46,6 +38,3 @@ function DetailView() {
   )
 }
 export default DetailView
-
-
->>>>>>> b5763eb8f5e4d53bd032d9c1daeaae8670b2d253

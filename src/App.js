@@ -7,7 +7,6 @@ import {
 import './App.css';
 import Main from "../src/componets/Main/Main";
 import { PreView } from "./componets/PreView/PreView";
-import {DetailView} from "./componets/DetailView/DetailView";
 import SearchBar from "./componets/SearchBar/SearchBar";
 import DetailView from "./componets/DetailView/DetailView";
 import ListView from "./componets/ListView/ListView";
